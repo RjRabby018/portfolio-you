@@ -160,8 +160,9 @@ body {
     padding-bottom: 20%;
     max-width: 630px;
     height: auto;
-    width: 100%;
+    width: 80%;
     border-radius: 8px;
+
 }
 
 .about-text h2 {
@@ -331,12 +332,25 @@ body {
     transform: scaleX(0);
     transform-origin: left;
 }
+.progress-line span {
+    display: block;
+    height: 100%;
+    border-radius: 10px;
+    background: #00ff99;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: animate 1s ease-in-out forwards;
+}
 
 @keyframes animate {
+    0% {
+        transform: scaleX(0);
+    }
     100% {
         transform: scaleX(1);
     }
 }
+
 
 .Technical-bars .bar .progress-line span {
     height: 100%;
@@ -548,11 +562,12 @@ body {
 
 .main-text h2 span {
     color: #0ef;
+    margin-bottom: 40px;
 }
 
 .porfolio-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(359px, auto));
+    grid-template-columns: repeat(auto-fit, minmax(700px, auto));
 }
 
 .row {
@@ -560,6 +575,7 @@ body {
     overflow: hidden;
     border-radius: 8px;
     cursor: pointer;
+    height: 500px;
 }
 
 .row img {
@@ -695,6 +711,13 @@ body {
     animation-delay: calc(.2s * var(--i));
 }
 
+/* ---------- */
+.buyMe01{
+    display: flex;
+    justify-content: space-between;
+}
+/* ------------ */
+
 .contact-icons i:hover {
     background: #0ef;
     color: #000;
@@ -764,6 +787,64 @@ form textarea {
     padding: 10px;
     border-radius: 0.5rem;
 }
+/* ----------- */
+.edu-box {
+    position: relative;
+    background: linear-gradient(to right, #0f1e2e, #0a192f);
+    padding: 25px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 238, 255, 0.1);
+    border: 1px solid rgba(0, 238, 255, 0.2);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.edu-box::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 180deg at 50% 50%, #0ef, transparent, #0ef);
+    animation: rotateBorder 6s linear infinite;
+    z-index: 0;
+    opacity: 0.1;
+}
+
+@keyframes rotateBorder {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.edu-box * {
+    position: relative;
+    z-index: 1;
+}
+
+.edu-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px rgba(0, 238, 255, 0.4);
+}
+
+.edu-box h3 {
+    color: #0ef;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.edu-box p {
+    font-size: 15px;
+    color: #ccc;
+    margin-bottom: 6px;
+    line-height: 1.5;
+}
+
+/* ---- */
 @keyframes slideRight {
     0% {
         transform: translateX(-100px);
